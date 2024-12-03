@@ -7,3 +7,11 @@ obsidian:
 .PHONY: ideavim 
 ideavim:
 	ln ./idea/.ideavimrc ~/.ideavimrc
+
+.PHONY: fish
+fish:
+	ln ./fish/config.fish ~/.config/fish/config.fish
+
+.PHONY: alacritty
+alacritty:
+	ln ./alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml 
