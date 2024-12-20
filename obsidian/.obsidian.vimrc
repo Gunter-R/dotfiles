@@ -9,6 +9,9 @@
 " More about obsidian vim: https://github.com/esm7/obsidian-vimrc-support
 " exampole config: https://github.com/chrisgrieser/.config/blob/41a9e915ec0b299084cf58f4265fb2f3a39e4643/obsidian/obsidian-vimrc.vim
 
+" Leader
+unmap ,
+
 
 """"""""""""""""""""""
 " Clipboard
@@ -39,9 +42,9 @@ nnoremap A g$a
 
 " next/prev tab
 exmap tabnext obcommand workspace:next-tab
-noremap K :tabnext<CR>
+noremap L :tabnext<CR>
 exmap tabprev obcommand workspace:previous-tab
-noremap J :tabprev<CR>
+noremap H :tabprev<CR>
 
 " close tab
 exmap close obcommand workspace:close
@@ -49,9 +52,9 @@ nmap <A-x> :close<CR>
 
 " history navigation
 exmap goforward obcommand app:go-forward
-noremap L :goforward<CR>
+noremap J :goforward<CR>
 exmap goback obcommand app:go-back
-noremap H :goback<CR>
+noremap K :goback<CR>
 
 exmap openlink obcommand shukuchi:open-link
 nmap gl :openlink<CR>
@@ -69,4 +72,10 @@ nmap <A-n> :newfile<CR>
 
 
 
+" Language tools: next/prev suggestion
+exmap nextSuggestion obcommand obsidian-languagetool-plugin:ltjump-to-next-suggestion
+noremap ge :nextSuggestion<CR>
+
+exmap prevSuggestion obcommand obsidian-languagetool-plugin:ltjump-to-previous-suggestion
+noremap gE :prevSuggestion<CR>
 
