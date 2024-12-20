@@ -1,0 +1,10 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nmap H previousTab\nmap L nextTab\nmap J goForward\nmap K goBack",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "rx",
+      "pattern": "https?://mail.google.com/*"
+    }
+  ]
+}
