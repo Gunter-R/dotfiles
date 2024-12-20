@@ -10,7 +10,7 @@
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-" Some mappings
+" Some random mappings
 inoremap jk <Esc>
 
 " set up which key plugin (installation in the store is required)
@@ -30,6 +30,23 @@ let g:WhichKeyDesc_refactor = "<leader>ra all refactors"
 
 map <leader>rf <Action>(ReformatCode)
 let g:WhichKeyDesc_file_reformat = "<leader>rf file reformat"
+
+" -- navigation
+map gf <Action>(MethodDown)
+let g:WhichKeyDesc_method_down = "gf method down"
+map gF <Action>(MethodUp)
+let g:WhichKeyDesc_method_up = "gF method up"
+
+map gc <Action>(VcsShowNextChangeMarker)
+let g:WhichKeyDesc_next_change = "gc next change"
+map gC <Action>(VcsShowPrevChangeMarker)
+let g:WhichKeyDesc_previous_change = "gC previous change"
+
+
+map ge <Action>(GotoNextError)
+let g:WhichKeyDesc_next_error = "ge next error"
+map gE <Action>(GotoPreviousError)
+let g:WhichKeyDesc_previous_error = "gE previous error"
 
 
 " -- execution --
@@ -61,10 +78,12 @@ let g:WhichKeyDesc_run_window = "<leader>wr run"
 map <leader>wh <Action>(HideAllWindows)
 let g:WhichKeyDesc_hide_windows = "<leader>wh hide"
 
+map <leader>ws <Action>(RecentFiles)
+let g:WhichKeyDesc_recent_files = "<leader>ws switcher"
 
 " - tabs --
-map J <Action>(PreviousTab)
-map K <Action>(NextTab)
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
 
 let g:WhichKeyDesc_tabs = "<leader>t tabs"
 
@@ -112,16 +131,21 @@ set clipboard^=unnamedplus,unnamed
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
+" easy motion
+" set easymotion
+
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
+
 " Commentary plugin
 " Plug 'tpope/vim-commentary'
+
 " Nerdtree: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
 Plug 'preservim/nerdtree'
+
 " change surrounding symbols
 set surround
-" f but for multiple lines (Plugin is not supported any more(((()
-" set sneak
+
 " highlight unique symbols when using f
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
