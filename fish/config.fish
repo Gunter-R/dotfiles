@@ -8,12 +8,13 @@ bind --mode insert --sets-mode default jk repaint
 zoxide init fish | source
 
 bind --user --mode insert \cl accept-autosuggestion
+bind --user --mode insert \e\cl forward-word
 bind --user --mode insert \ch backward-kill-line
+bind --user --mode insert \e\ch backward-kill-word
 bind --user --mode insert \ck history-search-backward
 bind --user --mode insert \cj history-search-forward
 
-
-# past from a global clipboard
+# paste from a global clipboard
 bind --mode default --sets-mode insert p 'fish_clipboard_paste&&commandline -f repaint'
 
 
