@@ -17,9 +17,11 @@ alacritty:
 	ln -i ./alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml 
 
 .PHONY: tmux
+tmux:
 	cp ./tmux/.tmux.conf.local .  # use custom config
 	cd
+	rm -fr .tmux
 	git clone https://github.com/gpakosz/.tmux.git
 	ln -s -f .tmux/.tmux.conf
-	set -Ux VISUAL /bin/vim  # you are supposed to use fish at this point
-	set -Ux EDITOR /bin/vim  # you are supposed to use fish at this point
+	fish -c "set -Ux VISUAL /bin/vim"  # you are supposed to have fish at this point
+	fish -c "set -Ux EDITOR /bin/vim"  # you are supposed to have fish at this point
